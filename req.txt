@@ -1,0 +1,7 @@
+netifaces==0.10.9
+pydantic==1.8.1
+python-mpd2==3.0.4
+redis==3.5.3
+smbus2==0.4.1
+typing-extensions==3.7.4.3
+websockets==8.1

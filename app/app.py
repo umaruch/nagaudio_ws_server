@@ -3,7 +3,7 @@ import asyncio
 import websockets
 import json
 
-import app.settings as settings
+import app.config as settings
 from app.command import Command, ValidationError
 from app.routes import routes, mpd_client
 
@@ -52,6 +52,7 @@ class Server:
 
         except Exception as e:
             logging.error(e)
+            exit()
 
     async def notify_clients(self, message: str):
         if self.clients:

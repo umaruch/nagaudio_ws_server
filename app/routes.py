@@ -1,5 +1,5 @@
 from app.extensions import mpd_client
-
+from app import settings
 
 # Словарь соотношений команда-функция
 routes = {
@@ -24,9 +24,9 @@ routes = {
     "SAVE_PLAYLIST": mpd_client.save_playlist,
     "UPDATE": mpd_client.update_database,
     "PLAY_BROWSE": mpd_client.play_browse_files,
-    "GET_DEVICE": None,
-    "REBOOT": None,
-    "RENAME_DEVICE": None,
+    "GET_DEVICE": settings.device_information,
+    "REBOOT": settings.reboot_device,
+    "RENAME_DEVICE": settings.update_device_name,
     "CHANGE_PROFILES": None,
     "GET_NETWORK": None,
     "CHANGE_NETWORK": None

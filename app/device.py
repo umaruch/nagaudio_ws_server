@@ -1,7 +1,6 @@
-import json
 import platform
 import netifaces
-from app.extensions import redis_client, mpd_client
+from app.extensions import redis_client
 
 
 def _update_mac(interface):
@@ -35,16 +34,3 @@ def init_device():
     _update_mac(default_interface)
     # Получнение IP адреса устройства
     _update_ip(default_interface)
-
-
-async def device_information():
-    """
-    Возвращает полную информацию об устройстве
-    TODO Добавить текущий профиль устройства когда прикрутится
-    """
-    device_name = redis_client.get("device_name")
-    mpd_information = await mpd_client.stats()
-
-    mpd_information["device_name"] = device_name
-
-    return json.dumps(mpd_information)

@@ -7,7 +7,7 @@ import redis
 import socket
 import json
 
-from app.settings import REDIS_HOST, REDIS_PORT
+from app.config import REDIS_HOST, REDIS_PORT
 
 redis_client = redis.Redis(
     host=REDIS_HOST,
